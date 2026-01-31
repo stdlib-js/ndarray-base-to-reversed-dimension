@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import toReversedDimension from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-reversed-dimension@deno/mod.js';
+import toReversedDimension from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-reversed-dimension@v0.1.0-deno/mod.js';
 ```
 
 #### toReversedDimension( x, dim )
@@ -116,7 +116,7 @@ The function accepts the following arguments:
 import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
 import zeroTo from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zero-to@deno/mod.js';
-import toReversedDimension from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-reversed-dimension@deno/mod.js';
+import toReversedDimension from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-reversed-dimension@v0.1.0-deno/mod.js';
 
 // Create a linear ndarray buffer:
 var buf = zeroTo( 16 );
