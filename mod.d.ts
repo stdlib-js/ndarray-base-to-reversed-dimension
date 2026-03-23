@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,34 +16,30 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MODULES //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
 
-var emptyLike = require( '@stdlib/ndarray-base-empty-like' );
-var reverseDimension = require( '@stdlib/ndarray-base-reverse-dimension' );
-var assign = require( '@stdlib/ndarray-base-assign' );
-
-
-// MAIN //
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
 * Returns a new ndarray where the order of elements of an input ndarray along a specified dimension is reversed.
 *
-* @param {ndarray} x - input array
-* @param {integer} dim - index of dimension to reverse
-* @returns {ndarray} output array
+* @param x - input array
+* @param dim - index of dimension to reverse
+* @returns output array
 *
 * @example
+* var typedarray = require( '@stdlib/array-typed' );
 * var ndarray = require( '@stdlib/ndarray-ctor' );
 * var ndarray2array = require( '@stdlib/ndarray-to-array' );
 *
-* var buffer = [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ];
+* var buffer = typedarray( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ], 'float64' );
 * var shape = [ 3, 2 ];
 * var strides = [ 2, 1 ];
 * var offset = 0;
 *
-* var x = ndarray( 'generic', buffer, shape, strides, offset, 'row-major' );
+* var x = ndarray( 'float64', buffer, shape, strides, offset, 'row-major' );
 * // returns <ndarray>
 *
 * var sh = x.shape;
@@ -61,23 +57,9 @@ var assign = require( '@stdlib/ndarray-base-assign' );
 * arr = ndarray2array( y );
 * // returns [ [ 5.0, 6.0 ], [ 3.0, 4.0 ], [ 1.0, 2.0 ] ]
 */
-function toReversedDimension( x, dim ) {
-	var out;
-	var xr;
-
-	// Create a reversed view of the input ndarray:
-	xr = reverseDimension( x, dim, false );
-
-	// Create an output ndarray with the same shape and data type as the input ndarray:
-	out = emptyLike( x );
-
-	// Assign the elements of the reversed input ndarray view to the output ndarray:
-	assign( [ xr, out ] );
-
-	return out;
-}
+declare function toReversedDimension<T extends ndarray>( x: T, dim: number ): T;
 
 
 // EXPORTS //
 
-module.exports = toReversedDimension;
+export = toReversedDimension;
